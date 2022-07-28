@@ -47,6 +47,31 @@ class WebViewController: UIViewController {
         let request = URLRequest(url: url)
         webView.load(request)
     }
+    
+    
+    @IBAction func dismissButtonTapped(_ sender: UIBarButtonItem) {
+        dismiss(animated: true)
+    }
+    
+    
+    @IBAction func backButtonTapped(_ sender: UIBarButtonItem) {
+        if webView.canGoBack {
+            webView.goBack()
+        }
+    }
+    
+    
+    @IBAction func reloadButtonTapped(_ sender: UIBarButtonItem) {
+        webView.reload()
+    }
+    
+    
+    @IBAction func forwardButtonTapped(_ sender: UIBarButtonItem) {
+        if webView.canGoForward {
+            webView.goForward()
+        }
+    }
+    
 }
 
 
