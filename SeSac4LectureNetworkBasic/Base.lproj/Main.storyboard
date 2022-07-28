@@ -219,29 +219,31 @@
                                     <constraint firstAttribute="height" constant="44" id="eec-Dt-kdB"/>
                                 </constraints>
                                 <items>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="VQ0-Rm-t8m"/>
                                     <barButtonItem image="xmark" catalog="system" id="bkb-I0-LeZ">
                                         <connections>
                                             <action selector="dismissButtonTapped:" destination="v5f-m5-l9B" id="dby-zG-fNX"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="eqD-0R-5Gv"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="q2q-uD-RFG"/>
                                     <barButtonItem image="arrow.backward" catalog="system" id="VMh-wS-ASo">
                                         <connections>
                                             <action selector="backButtonTapped:" destination="v5f-m5-l9B" id="O64-2e-1qr"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="vgx-NR-lWV"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="ZKh-mE-QZy"/>
                                     <barButtonItem image="arrow.clockwise" catalog="system" id="dxV-dQ-fvG">
                                         <connections>
                                             <action selector="reloadButtonTapped:" destination="v5f-m5-l9B" id="ZTb-Kk-0rV"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="6BC-0N-KLc"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="eVy-XE-oIs"/>
                                     <barButtonItem image="arrow.forward" catalog="system" id="Jl7-B7-8E2">
                                         <connections>
                                             <action selector="forwardButtonTapped:" destination="v5f-m5-l9B" id="BG4-Fr-4be"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="pFL-HV-lx4"/>
                                 </items>
                             </toolbar>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J4h-IL-eA3">

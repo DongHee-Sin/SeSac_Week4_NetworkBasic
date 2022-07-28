@@ -41,6 +41,7 @@ class WebViewController: UIViewController {
     // MARK: - Methods
     func openWebView(url: String) {
         guard let url = URL(string: url) else {
+            present404Alert()
             return
         }
         
@@ -72,6 +73,14 @@ class WebViewController: UIViewController {
         }
     }
     
+    
+    func present404Alert() {
+        let alertController = UIAlertController(title: "404", message: "NOT FOUND", preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "OK", style: .default)
+        alertController.addAction(alertAction)
+        present(alertController, animated: true)
+    }
+    
 }
 
 
@@ -79,6 +88,12 @@ class WebViewController: UIViewController {
 extension WebViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        openWebView(url: searchBar.text!)
+        guard let searchURL = searchBar.text?.lowercased() else { return }
+        
+        if searchURL.hasPrefix("http://") || searchURL.hasPrefix("https://") {
+            openWebView(url: searchURL)
+        }else {
+            openWebView(url: "https://" + searchURL)
+        }
     }
 }
