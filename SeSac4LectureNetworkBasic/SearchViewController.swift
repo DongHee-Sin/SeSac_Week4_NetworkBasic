@@ -25,8 +25,8 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         
         // 연결고리 작업 : 테이블뷰가 해야 할 역할 > 뷰컨트롤러에게 요청
-        searchTableView.delegate = self
-        searchTableView.dataSource = self
+        //searchTableView.delegate = self
+        //searchTableView.dataSource = self
         
         // 테이블뷰가 사용할 테이블뷰 셀(XIB) 등록
         // XIB : xml interface builder <= Nib
@@ -37,22 +37,40 @@ class SearchViewController: UIViewController {
 }
 
 
+
+
+//extension SearchViewController: ViewPresentableProtocol {
+//    func configureView() {
+//        searchTableView.backgroundColor = .clear
+//        searchTableView.separatorColor = .clear
+//        searchTableView.rowHeight = 60
+//    }
+//
+//    func configureLabel() {
+//        <#code#>
+//    }
+//
+//}
+
+
+
+
 // MARK: - TableView Protocol
-extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 100
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ListTableViewCell.identifier, for: indexPath) as? ListTableViewCell else {
-            return UITableViewCell()
-        }
-        
-        cell.titleLabel.font = .boldSystemFont(ofSize: 22)
-        cell.titleLabel.text = "Hello"
-        
-        return cell
-    }
-    
-    
-}
+//extension SearchViewController: UITableViewDe@objc legate, UITableViewDataSource {
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return 100
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        guard let cell = tableView.dequeueReusableCell(withIdentifier: ListTableViewCell.identifier, for: indexPath) as? ListTableViewCell else {
+//            return UITableViewCell()
+//        }
+//
+//        cell.titleLabel.font = .boldSystemFont(ofSize: 22)
+//        cell.titleLabel.text = "Hello"
+//
+//        return cell
+//    }
+//
+//
+//}

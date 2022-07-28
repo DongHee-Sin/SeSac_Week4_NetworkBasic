@@ -15,6 +15,11 @@
 		D0BDFD182890E1F8002DEA45 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BDFD172890E1F8002DEA45 /* SearchViewController.swift */; };
 		D0BDFD1B2890E4CE002DEA45 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BDFD192890E4CE002DEA45 /* ListTableViewCell.swift */; };
 		D0BDFD1C2890E4CE002DEA45 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0BDFD1A2890E4CE002DEA45 /* ListTableViewCell.xib */; };
+		D0D2548B28920CD400AB0CC5 /* ViewPresentbleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D2548A28920CD400AB0CC5 /* ViewPresentbleProtocol.swift */; };
+		D0D2548E2892119F00AB0CC5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D2548D2892119F00AB0CC5 /* ViewController.swift */; };
+		D0D254912892236A00AB0CC5 /* LottoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D254902892236A00AB0CC5 /* LottoViewController.swift */; };
+		D0D254932892304F00AB0CC5 /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D254922892304F00AB0CC5 /* TranslateViewController.swift */; };
+		D0D2549528923A9F00AB0CC5 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D2549428923A9F00AB0CC5 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +33,11 @@
 		D0BDFD172890E1F8002DEA45 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		D0BDFD192890E4CE002DEA45 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		D0BDFD1A2890E4CE002DEA45 /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
+		D0D2548A28920CD400AB0CC5 /* ViewPresentbleProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPresentbleProtocol.swift; sourceTree = "<group>"; };
+		D0D2548D2892119F00AB0CC5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D0D254902892236A00AB0CC5 /* LottoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoViewController.swift; sourceTree = "<group>"; };
+		D0D254922892304F00AB0CC5 /* TranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewController.swift; sourceTree = "<group>"; };
+		D0D2549428923A9F00AB0CC5 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,17 +70,46 @@
 		D0BDFD022890DD98002DEA45 /* SeSac4LectureNetworkBasic */ = {
 			isa = PBXGroup;
 			children = (
-				D0BDFD032890DD98002DEA45 /* AppDelegate.swift */,
-				D0BDFD052890DD98002DEA45 /* SceneDelegate.swift */,
+				D0D2548928920CA600AB0CC5 /* Protocol */,
+				D0D2548C28920EE500AB0CC5 /* LifeCycle */,
 				D0BDFD092890DD98002DEA45 /* Main.storyboard */,
 				D0BDFD172890E1F8002DEA45 /* SearchViewController.swift */,
-				D0BDFD192890E4CE002DEA45 /* ListTableViewCell.swift */,
-				D0BDFD1A2890E4CE002DEA45 /* ListTableViewCell.xib */,
+				D0D254902892236A00AB0CC5 /* LottoViewController.swift */,
+				D0D254922892304F00AB0CC5 /* TranslateViewController.swift */,
+				D0D2549428923A9F00AB0CC5 /* WebViewController.swift */,
+				D0D2548F289221E700AB0CC5 /* ListTableViewCell */,
+				D0D2548D2892119F00AB0CC5 /* ViewController.swift */,
 				D0BDFD0C2890DD99002DEA45 /* Assets.xcassets */,
 				D0BDFD0E2890DD99002DEA45 /* LaunchScreen.storyboard */,
 				D0BDFD112890DD99002DEA45 /* Info.plist */,
 			);
 			path = SeSac4LectureNetworkBasic;
+			sourceTree = "<group>";
+		};
+		D0D2548928920CA600AB0CC5 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				D0D2548A28920CD400AB0CC5 /* ViewPresentbleProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		D0D2548C28920EE500AB0CC5 /* LifeCycle */ = {
+			isa = PBXGroup;
+			children = (
+				D0BDFD032890DD98002DEA45 /* AppDelegate.swift */,
+				D0BDFD052890DD98002DEA45 /* SceneDelegate.swift */,
+			);
+			path = LifeCycle;
+			sourceTree = "<group>";
+		};
+		D0D2548F289221E700AB0CC5 /* ListTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				D0BDFD192890E4CE002DEA45 /* ListTableViewCell.swift */,
+				D0BDFD1A2890E4CE002DEA45 /* ListTableViewCell.xib */,
+			);
+			path = ListTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,9 +184,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0D2548E2892119F00AB0CC5 /* ViewController.swift in Sources */,
+				D0D2549528923A9F00AB0CC5 /* WebViewController.swift in Sources */,
 				D0BDFD182890E1F8002DEA45 /* SearchViewController.swift in Sources */,
 				D0BDFD1B2890E4CE002DEA45 /* ListTableViewCell.swift in Sources */,
+				D0D254912892236A00AB0CC5 /* LottoViewController.swift in Sources */,
 				D0BDFD042890DD98002DEA45 /* AppDelegate.swift in Sources */,
+				D0D254932892304F00AB0CC5 /* TranslateViewController.swift in Sources */,
+				D0D2548B28920CD400AB0CC5 /* ViewPresentbleProtocol.swift in Sources */,
 				D0BDFD062890DD98002DEA45 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
