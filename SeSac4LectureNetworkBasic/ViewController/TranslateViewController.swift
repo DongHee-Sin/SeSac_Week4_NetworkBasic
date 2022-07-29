@@ -34,6 +34,8 @@ class TranslateViewController: UIViewController {
         userInputTextView.text = textViewPlaceholderText
         userInputTextView.textColor = .lightGray
         
+        userInputTextView.font = UIFont(name: "HBIOS-SYS", size: 20)
+        
 //        userInputTextView.resignFirstResponder()
 //        userInputTextView.becomeFirstResponder()
     }

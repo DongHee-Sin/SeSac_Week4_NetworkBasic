@@ -147,6 +147,7 @@
                         <segue destination="tMw-w1-gMH" kind="relationship" relationship="viewControllers" id="YfJ-Jt-v2z"/>
                         <segue destination="Jy6-KK-iMc" kind="relationship" relationship="viewControllers" id="UKT-7k-5Yw"/>
                         <segue destination="v5f-m5-l9B" kind="relationship" relationship="viewControllers" id="Z9r-Gj-6Ye"/>
+                        <segue destination="mBW-Zw-ife" kind="relationship" relationship="viewControllers" id="NXS-iw-OCU"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tbH-UP-cZj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -279,6 +280,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bIy-O3-iDt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2903" y="69"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="pdg-Xo-pPB">
+            <objects>
+                <viewController storyboardIdentifier="LocationViewController" id="mBW-Zw-ife" customClass="LocationViewController" customModule="SeSac4LectureNetworkBasic" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WFR-Qw-axi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZQ-cB-mwl">
+                                <rect key="frame" x="20" y="64" width="374" height="50"/>
+                                <color key="backgroundColor" red="0.92283788519999999" green="0.98844787919999999" blue="0.98677377200000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="hF7-og-PcV"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Local Notification"/>
+                                <connections>
+                                    <action selector="notificationButtonTapped:" destination="mBW-Zw-ife" eventType="touchUpInside" id="mTp-jA-txv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2he-rY-Vch"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wZQ-cB-mwl" firstAttribute="top" secondItem="2he-rY-Vch" secondAttribute="top" constant="20" id="SHU-dw-iO6"/>
+                            <constraint firstItem="wZQ-cB-mwl" firstAttribute="leading" secondItem="2he-rY-Vch" secondAttribute="leading" constant="20" id="kpx-RS-tM8"/>
+                            <constraint firstItem="2he-rY-Vch" firstAttribute="trailing" secondItem="wZQ-cB-mwl" secondAttribute="trailing" constant="20" id="sF0-Z0-asR"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="feD-W9-xNY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zDT-0O-V6B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3880" y="69"/>
         </scene>
     </scenes>
     <resources>

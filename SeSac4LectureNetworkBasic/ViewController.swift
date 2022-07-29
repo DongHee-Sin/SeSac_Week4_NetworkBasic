@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController, ViewPresentableProtocol {
 
     var navigationTitleString: String = "대장님의 다마고칭"
-    
+
     var backgroundColor: UIColor = .blue
     
     
