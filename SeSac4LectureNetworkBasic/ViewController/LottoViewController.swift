@@ -13,8 +13,8 @@ import SwiftyJSON
 
 class LottoViewController: UIViewController {
     
-    enum LottoJsonKey: String {
-        case drwtNo1
+    enum LottoResultKey: String, CaseIterable {
+        case drwtNo1, drwtNo2, drwtNo3, drwtNo4, drwtNo5, drwtNo6, bnusNo
     }
     
 
@@ -72,15 +72,12 @@ class LottoViewController: UIViewController {
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
-                print("JSON: \(json)")
                 
-                let bonus = json["bnusNo"].intValue
-                print(bonus)
+                let labelArray = [drwt1Label, drwt2Label, drwt3Label, drwt4Label, drwt5Label, drwt6Label, bonusLabel]
                 
-                let date = json["drwNoDate"].stringValue
-                print(date)
-                
-                //numberTextField.text = date
+                for (label, resultKey) in zip(labelArray, LottoResultKey.allCases) {
+                    label?.text = json[resultKey.rawValue].stringValue
+                }
                 
             case .failure(let error):
                 print(error)
