@@ -67,6 +67,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D002A9672897BA0500E53834 /* CustomClass */ = {
+			isa = PBXGroup;
+			children = (
+				D08098C0289262E800AAE88D /* CustomTabBarController.swift */,
+			);
+			path = CustomClass;
+			sourceTree = "<group>";
+		};
 		D0399C672897578200D5FDD0 /* Constant */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,7 +131,7 @@
 				D04BD12728935D3800886AD3 /* ViewController */,
 				D0D2548F289221E700AB0CC5 /* ListTableViewCell */,
 				D0D2548D2892119F00AB0CC5 /* ViewController.swift */,
-				D08098C0289262E800AAE88D /* CustomTabBarController.swift */,
+				D002A9672897BA0500E53834 /* CustomClass */,
 				D0BDFD0C2890DD99002DEA45 /* Assets.xcassets */,
 				D0BDFD0E2890DD99002DEA45 /* LaunchScreen.storyboard */,
 				D0BDFD112890DD99002DEA45 /* Info.plist */,
