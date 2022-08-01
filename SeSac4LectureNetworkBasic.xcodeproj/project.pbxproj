@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D002A9692897CA8900E53834 /* BeerAPIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D002A9682897CA8900E53834 /* BeerAPIViewController.swift */; };
 		D0399C662897527C00D5FDD0 /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0399C652897527C00D5FDD0 /* ReusableViewProtocol.swift */; };
 		D0399C692897578F00D5FDD0 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0399C682897578F00D5FDD0 /* Constant.swift */; };
 		D0399C6B28975FAB00D5FDD0 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0399C6A28975FAB00D5FDD0 /* UserDefaultsHelper.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D002A9682897CA8900E53834 /* BeerAPIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerAPIViewController.swift; sourceTree = "<group>"; };
 		D0399C652897527C00D5FDD0 /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
 		D0399C682897578F00D5FDD0 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		D0399C6A28975FAB00D5FDD0 /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				D0D254922892304F00AB0CC5 /* TranslateViewController.swift */,
 				D0D2549428923A9F00AB0CC5 /* WebViewController.swift */,
 				D04BD12828935D4B00886AD3 /* LocationViewController.swift */,
+				D002A9682897CA8900E53834 /* BeerAPIViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				D0399C6B28975FAB00D5FDD0 /* UserDefaultsHelper.swift in Sources */,
 				D0D2548E2892119F00AB0CC5 /* ViewController.swift in Sources */,
 				D0D2549528923A9F00AB0CC5 /* WebViewController.swift in Sources */,
+				D002A9692897CA8900E53834 /* BeerAPIViewController.swift in Sources */,
 				D08098C1289262E800AAE88D /* CustomTabBarController.swift in Sources */,
 				D0BDFD182890E1F8002DEA45 /* SearchViewController.swift in Sources */,
 				D0BDFD1B2890E4CE002DEA45 /* ListTableViewCell.swift in Sources */,

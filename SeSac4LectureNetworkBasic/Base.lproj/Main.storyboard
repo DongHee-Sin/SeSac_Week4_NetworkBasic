@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JGQ-d5-jOy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DWo-NO-aX4">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -173,6 +173,67 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tbH-UP-cZj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1470" y="-744"/>
+        </scene>
+        <!--BeerAPI View Controller-->
+        <scene sceneID="oob-cO-BRb">
+            <objects>
+                <viewController storyboardIdentifier="BeerAPIViewController" id="DWo-NO-aX4" customClass="BeerAPIViewController" customModule="SeSac4LectureNetworkBasic" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dGg-mO-qAK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⭐️ 오늘의 맥주 ☘️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tTY-RF-oEF">
+                                <rect key="frame" x="63" y="94" width="288" height="48"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9UW-fx-Eat">
+                                <rect key="frame" x="50" y="192" width="314" height="314"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="9UW-fx-Eat" secondAttribute="height" multiplier="1:1" id="mHr-Yd-SZQ"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="맥주" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="bNk-HS-qZI">
+                                <rect key="frame" x="20" y="526" width="374" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iCh-yw-Xfe">
+                                <rect key="frame" x="20" y="592" width="374" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="DZF-yr-6bp"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="iCh-yw-Xfe" firstAttribute="leading" secondItem="DZF-yr-6bp" secondAttribute="leading" constant="20" id="1Qo-Nx-5Gc"/>
+                            <constraint firstItem="bNk-HS-qZI" firstAttribute="top" secondItem="9UW-fx-Eat" secondAttribute="bottom" constant="20" id="229-VQ-Tcb"/>
+                            <constraint firstItem="DZF-yr-6bp" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="iCh-yw-Xfe" secondAttribute="bottom" constant="50" id="CO7-E3-mGS"/>
+                            <constraint firstItem="iCh-yw-Xfe" firstAttribute="top" secondItem="bNk-HS-qZI" secondAttribute="bottom" constant="30" id="NT7-jY-vIk"/>
+                            <constraint firstItem="DZF-yr-6bp" firstAttribute="trailing" secondItem="9UW-fx-Eat" secondAttribute="trailing" constant="50" id="S31-xe-VQv"/>
+                            <constraint firstItem="9UW-fx-Eat" firstAttribute="top" secondItem="tTY-RF-oEF" secondAttribute="bottom" constant="50" id="T2w-kK-f72"/>
+                            <constraint firstItem="DZF-yr-6bp" firstAttribute="trailing" secondItem="iCh-yw-Xfe" secondAttribute="trailing" constant="20" id="TAa-9W-nD1"/>
+                            <constraint firstItem="tTY-RF-oEF" firstAttribute="top" secondItem="DZF-yr-6bp" secondAttribute="top" constant="50" id="U6M-dZ-5Qa"/>
+                            <constraint firstItem="DZF-yr-6bp" firstAttribute="trailing" secondItem="bNk-HS-qZI" secondAttribute="trailing" constant="20" id="imr-A8-ed6"/>
+                            <constraint firstItem="9UW-fx-Eat" firstAttribute="leading" secondItem="DZF-yr-6bp" secondAttribute="leading" constant="50" id="jxl-iY-m3g"/>
+                            <constraint firstItem="bNk-HS-qZI" firstAttribute="leading" secondItem="DZF-yr-6bp" secondAttribute="leading" constant="20" id="lFB-No-sRO"/>
+                            <constraint firstItem="tTY-RF-oEF" firstAttribute="centerX" secondItem="dGg-mO-qAK" secondAttribute="centerX" id="xG6-ER-qQA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="beerDescriptionLabel" destination="iCh-yw-Xfe" id="FyR-rY-yv4"/>
+                        <outlet property="beerImage" destination="9UW-fx-Eat" id="wAi-7y-QJ1"/>
+                        <outlet property="beerNameLabel" destination="bNk-HS-qZI" id="IZA-T4-tcf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rcU-dT-PUv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2570" y="-745"/>
         </scene>
         <!--Translate View Controller-->
         <scene sceneID="pvl-bw-yEM">
@@ -351,6 +412,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBrownColor">
             <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
