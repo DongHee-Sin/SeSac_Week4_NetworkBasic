@@ -36,9 +36,7 @@ import UIKit
 
 
 /*
- 
  ex) 테이블뷰
- 
  */
 
 

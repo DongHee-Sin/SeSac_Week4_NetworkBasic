@@ -8,7 +8,7 @@
 import UIKit
 
 class LocationViewController: UIViewController {
-
+    
     // Notification 1.
     let notification = UNUserNotificationCenter.current()
     
@@ -18,16 +18,16 @@ class LocationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        // Custom Font
-//        // 이건 그냥 스피넷 저장하고 사용해도 갠춘 똑같이 씀
-//        // 폰트이름 찾기.
-//        for family in UIFont.familyNames {
-//            print("=======\(family)=======")
-//            
-//            for name in UIFont.fontNames(forFamilyName: family) {
-//                print(name)
-//            }
-//        }
+        // Custom Font
+        // 이건 그냥 스피넷 저장하고 사용해도 갠춘 똑같이 씀
+        // 폰트이름 찾기.
+        for family in UIFont.familyNames {
+            print("=======\(family)=======")
+            
+            for name in UIFont.fontNames(forFamilyName: family) {
+                print(name)
+            }
+        }
         
         requestAuthorization()
     }
@@ -41,11 +41,9 @@ class LocationViewController: UIViewController {
         let authorizationOptions = UNAuthorizationOptions(arrayLiteral: .alert, .badge, .sound)
         
         notification.requestAuthorization(options: authorizationOptions) { success, error in
-            
             if success {
                 self.sendNotification()
             }
-            
         }
     }
     
@@ -81,12 +79,14 @@ class LocationViewController: UIViewController {
         
         // 언제 보낼 것인가? 1. 시간 간격 2. 캘린더 3. 위치에 따라 설정 가능.
         // 시간 간격은 60초 이상 설정해야 "반복" 가능
-        //let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
         
+        // 60초마다 알림 (60초 이상으로 설정해야 반복 가능)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
+        
+        // 매 시각의 10분마다 알림 (ex- 1시 10분, 2시 10분)
         var dateComponents = DateComponents()
-        dateComponents.second = 10
-        
-        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+        dateComponents.minute = 10
+        let trigger2 = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
         
         // 알림 요청
         // identifier : 같은 identifier를 사용하면 알림이 대체됨 > 여러 identifier이면 계속 쌓임 (알림창에)

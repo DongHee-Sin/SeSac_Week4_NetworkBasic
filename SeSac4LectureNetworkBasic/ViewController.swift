@@ -14,8 +14,14 @@ class ViewController: UIViewController, ViewPresentableProtocol {
     var backgroundColor: UIColor = .blue
     
     
+    // UserDefaultsHelper 테스트
+    //let helper = UserDefaultsHelper()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        UserDefaultsHelper.shared.nickname = "고래밥"
+        navigationItem.title = UserDefaultsHelper.shared.nickname
     }
     
     

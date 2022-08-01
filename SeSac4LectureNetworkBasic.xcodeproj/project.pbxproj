@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D0399C662897527C00D5FDD0 /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0399C652897527C00D5FDD0 /* ReusableViewProtocol.swift */; };
+		D0399C692897578F00D5FDD0 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0399C682897578F00D5FDD0 /* Constant.swift */; };
+		D0399C6B28975FAB00D5FDD0 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0399C6A28975FAB00D5FDD0 /* UserDefaultsHelper.swift */; };
+		D0399C6E28977CEA00D5FDD0 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D0399C6D28977CEA00D5FDD0 /* Alamofire */; };
+		D0399C7128977D0300D5FDD0 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = D0399C7028977D0300D5FDD0 /* SwiftyJSON */; };
 		D04BD12928935D4B00886AD3 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04BD12828935D4B00886AD3 /* LocationViewController.swift */; };
 		D04BD12C289384E800886AD3 /* HBIOS-SYS.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D04BD12B289384E800886AD3 /* HBIOS-SYS.ttf */; };
 		D08098C1289262E800AAE88D /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08098C0289262E800AAE88D /* CustomTabBarController.swift */; };
@@ -26,6 +31,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D0399C652897527C00D5FDD0 /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
+		D0399C682897578F00D5FDD0 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		D0399C6A28975FAB00D5FDD0 /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		D04BD12828935D4B00886AD3 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		D04BD12B289384E800886AD3 /* HBIOS-SYS.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HBIOS-SYS.ttf"; sourceTree = "<group>"; };
 		D08098C0289262E800AAE88D /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
@@ -51,12 +59,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0399C7128977D0300D5FDD0 /* SwiftyJSON in Frameworks */,
+				D0399C6E28977CEA00D5FDD0 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D0399C672897578200D5FDD0 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				D0399C682897578F00D5FDD0 /* Constant.swift */,
+				D0399C6A28975FAB00D5FDD0 /* UserDefaultsHelper.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
 		D04BD12728935D3800886AD3 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +115,7 @@
 		D0BDFD022890DD98002DEA45 /* SeSac4LectureNetworkBasic */ = {
 			isa = PBXGroup;
 			children = (
+				D0399C672897578200D5FDD0 /* Constant */,
 				D04BD12A289383F700886AD3 /* Resource */,
 				D0D2548928920CA600AB0CC5 /* Protocol */,
 				D0D2548C28920EE500AB0CC5 /* LifeCycle */,
@@ -115,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				D0D2548A28920CD400AB0CC5 /* ViewPresentbleProtocol.swift */,
+				D0399C652897527C00D5FDD0 /* ReusableViewProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -153,6 +174,10 @@
 			dependencies = (
 			);
 			name = SeSac4LectureNetworkBasic;
+			packageProductDependencies = (
+				D0399C6D28977CEA00D5FDD0 /* Alamofire */,
+				D0399C7028977D0300D5FDD0 /* SwiftyJSON */,
+			);
 			productName = SeSac4LectureNetworkBasic;
 			productReference = D0BDFD002890DD98002DEA45 /* SeSac4LectureNetworkBasic.app */;
 			productType = "com.apple.product-type.application";
@@ -181,6 +206,10 @@
 				Base,
 			);
 			mainGroup = D0BDFCF72890DD98002DEA45;
+			packageReferences = (
+				D0399C6C28977CEA00D5FDD0 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				D0399C6F28977D0300D5FDD0 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+			);
 			productRefGroup = D0BDFD012890DD98002DEA45 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -210,14 +239,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0399C6B28975FAB00D5FDD0 /* UserDefaultsHelper.swift in Sources */,
 				D0D2548E2892119F00AB0CC5 /* ViewController.swift in Sources */,
 				D0D2549528923A9F00AB0CC5 /* WebViewController.swift in Sources */,
 				D08098C1289262E800AAE88D /* CustomTabBarController.swift in Sources */,
 				D0BDFD182890E1F8002DEA45 /* SearchViewController.swift in Sources */,
 				D0BDFD1B2890E4CE002DEA45 /* ListTableViewCell.swift in Sources */,
+				D0399C662897527C00D5FDD0 /* ReusableViewProtocol.swift in Sources */,
 				D04BD12928935D4B00886AD3 /* LocationViewController.swift in Sources */,
 				D0D254912892236A00AB0CC5 /* LottoViewController.swift in Sources */,
 				D0BDFD042890DD98002DEA45 /* AppDelegate.swift in Sources */,
+				D0399C692897578F00D5FDD0 /* Constant.swift in Sources */,
 				D0D254932892304F00AB0CC5 /* TranslateViewController.swift in Sources */,
 				D0D2548B28920CD400AB0CC5 /* ViewPresentbleProtocol.swift in Sources */,
 				D0BDFD062890DD98002DEA45 /* SceneDelegate.swift in Sources */,
@@ -367,6 +399,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PW2RLJT734;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeSac4LectureNetworkBasic/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -395,6 +428,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PW2RLJT734;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeSac4LectureNetworkBasic/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -438,6 +472,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D0399C6C28977CEA00D5FDD0 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "http://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		D0399C6F28977D0300D5FDD0 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D0399C6D28977CEA00D5FDD0 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D0399C6C28977CEA00D5FDD0 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		D0399C7028977D0300D5FDD0 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D0399C6F28977D0300D5FDD0 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D0BDFCF82890DD98002DEA45 /* Project object */;
 }
