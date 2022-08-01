@@ -184,9 +184,8 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⭐️ 오늘의 맥주 ☘️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tTY-RF-oEF">
                                 <rect key="frame" x="63" y="94" width="288" height="48"/>
-                                <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9UW-fx-Eat">
@@ -202,8 +201,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iCh-yw-Xfe">
-                                <rect key="frame" x="20" y="592" width="374" height="24"/>
+                                <rect key="frame" x="20" y="623" width="374" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ph" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hXh-yq-nUw">
+                                <rect key="frame" x="197" y="572" width="20" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -214,12 +219,14 @@
                             <constraint firstItem="iCh-yw-Xfe" firstAttribute="leading" secondItem="DZF-yr-6bp" secondAttribute="leading" constant="20" id="1Qo-Nx-5Gc"/>
                             <constraint firstItem="bNk-HS-qZI" firstAttribute="top" secondItem="9UW-fx-Eat" secondAttribute="bottom" constant="20" id="229-VQ-Tcb"/>
                             <constraint firstItem="DZF-yr-6bp" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="iCh-yw-Xfe" secondAttribute="bottom" constant="50" id="CO7-E3-mGS"/>
-                            <constraint firstItem="iCh-yw-Xfe" firstAttribute="top" secondItem="bNk-HS-qZI" secondAttribute="bottom" constant="30" id="NT7-jY-vIk"/>
+                            <constraint firstItem="hXh-yq-nUw" firstAttribute="centerX" secondItem="dGg-mO-qAK" secondAttribute="centerX" id="QoD-bm-pwC"/>
                             <constraint firstItem="DZF-yr-6bp" firstAttribute="trailing" secondItem="9UW-fx-Eat" secondAttribute="trailing" constant="50" id="S31-xe-VQv"/>
                             <constraint firstItem="9UW-fx-Eat" firstAttribute="top" secondItem="tTY-RF-oEF" secondAttribute="bottom" constant="50" id="T2w-kK-f72"/>
                             <constraint firstItem="DZF-yr-6bp" firstAttribute="trailing" secondItem="iCh-yw-Xfe" secondAttribute="trailing" constant="20" id="TAa-9W-nD1"/>
                             <constraint firstItem="tTY-RF-oEF" firstAttribute="top" secondItem="DZF-yr-6bp" secondAttribute="top" constant="50" id="U6M-dZ-5Qa"/>
+                            <constraint firstItem="iCh-yw-Xfe" firstAttribute="top" secondItem="hXh-yq-nUw" secondAttribute="bottom" constant="30" id="aL3-rf-7Br"/>
                             <constraint firstItem="DZF-yr-6bp" firstAttribute="trailing" secondItem="bNk-HS-qZI" secondAttribute="trailing" constant="20" id="imr-A8-ed6"/>
+                            <constraint firstItem="hXh-yq-nUw" firstAttribute="top" secondItem="bNk-HS-qZI" secondAttribute="bottom" constant="10" id="jfH-PK-nR9"/>
                             <constraint firstItem="9UW-fx-Eat" firstAttribute="leading" secondItem="DZF-yr-6bp" secondAttribute="leading" constant="50" id="jxl-iY-m3g"/>
                             <constraint firstItem="bNk-HS-qZI" firstAttribute="leading" secondItem="DZF-yr-6bp" secondAttribute="leading" constant="20" id="lFB-No-sRO"/>
                             <constraint firstItem="tTY-RF-oEF" firstAttribute="centerX" secondItem="dGg-mO-qAK" secondAttribute="centerX" id="xG6-ER-qQA"/>
@@ -229,6 +236,7 @@
                         <outlet property="beerDescriptionLabel" destination="iCh-yw-Xfe" id="FyR-rY-yv4"/>
                         <outlet property="beerImage" destination="9UW-fx-Eat" id="wAi-7y-QJ1"/>
                         <outlet property="beerNameLabel" destination="bNk-HS-qZI" id="IZA-T4-tcf"/>
+                        <outlet property="phLabel" destination="hXh-yq-nUw" id="cVN-m0-jSH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rcU-dT-PUv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -412,9 +420,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBrownColor">
             <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

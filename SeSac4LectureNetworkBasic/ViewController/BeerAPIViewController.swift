@@ -14,7 +14,7 @@ import SwiftyJSON
 class BeerAPIViewController: UIViewController {
     
     enum BeerResultKey: String {
-        case name, description, image_url
+        case name, description, image_url, ph
     }
     
     
@@ -22,6 +22,7 @@ class BeerAPIViewController: UIViewController {
     // MARK: - Outlet
     @IBOutlet weak var beerImage: UIImageView!
     @IBOutlet weak var beerNameLabel: UILabel!
+    @IBOutlet weak var phLabel: UILabel!
     @IBOutlet weak var beerDescriptionLabel: UILabel!
     
     
@@ -48,10 +49,12 @@ class BeerAPIViewController: UIViewController {
                 
                 let name = beerInfo[BeerResultKey.name.rawValue].stringValue
                 let description = beerInfo[BeerResultKey.description.rawValue].stringValue
+                let ph = beerInfo[BeerResultKey.ph.rawValue].stringValue
                 let imageURL = URL(string: beerInfo[BeerResultKey.image_url.rawValue].stringValue)
                 
                 beerNameLabel.text = name
                 beerDescriptionLabel.text = description
+                phLabel.text = "ph: \(ph)"
                 if let url = imageURL { loadImage(url: url) }
                 
             case .failure(let error):
