@@ -51,6 +51,8 @@ class SearchViewController: UIViewController {
     }
 
     
+    
+    // MARK: - Methods
     func requestBoxOffice(date: String) {
         list.removeAll()
         
@@ -84,6 +86,7 @@ class SearchViewController: UIViewController {
 
 
 
+// MARK: - View Presentable Protocol
 extension SearchViewController: ViewPresentableProtocol {
     func configureView() {
         searchTableView.backgroundColor = .clear
@@ -114,6 +117,8 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
 
 
 }
+
+
 
 
 // MARK: - SearchBar Protocol

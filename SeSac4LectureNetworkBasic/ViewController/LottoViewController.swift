@@ -19,7 +19,7 @@ class LottoViewController: UIViewController {
     
 
     // MARK: - Propertys
-    let numberList: [Int] = Array(1...1025).reversed()
+    var numberList: [Int] = []
     
     var lottoPickerView = UIPickerView()
     
@@ -49,7 +49,9 @@ class LottoViewController: UIViewController {
         lottoPickerView.delegate = self
         lottoPickerView.dataSource = self
         
-        requestLotto(number: 1025)
+        let latestRound = calcLatestRound()
+        numberList = Array(1...latestRound).reversed()
+        requestLotto(number: latestRound)
     }
     
     
@@ -87,6 +89,19 @@ class LottoViewController: UIViewController {
     }
     
     
+    func calcLatestRound() -> Int {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy.MM.dd"
+        
+        let currentDate = Date()
+        guard let startDate = dateFormatter.date(from: "2002.12.09") else { return 1 }
+        
+        let result = (currentDate.timeIntervalSince1970 - startDate.timeIntervalSince1970) / 86400 / 7
+        
+        return Int(result)
+    }
+    
+    
     func settingLabel() {
         [drwt1Label, drwt2Label, drwt3Label, drwt4Label, drwt5Label, drwt6Label, bonusLabel].forEach {
             guard let label = $0 else { return }
@@ -107,6 +122,7 @@ class LottoViewController: UIViewController {
         plusLabel.textAlignment = .center
     }
 }
+
 
 
 
