@@ -93,7 +93,7 @@ extension TranslateViewController: UITextViewDelegate {
     
     // 텍스트뷰의 텍스트가 변할 때마다 호출
     func textViewDidChange(_ textView: UITextView) {
-        print(textView.text.count)
+        //print(textView.text.count)
     }
     
     // 편집이 시작될 때. 커서가 깜빡거릴 때 (시작될 때)

@@ -62,7 +62,6 @@ class SearchViewController: UIViewController {
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
-                print(value)
                 
                 for movie in json["boxOfficeResult"]["dailyBoxOfficeList"].arrayValue {
                     let movieNm = movie["movieNm"].stringValue

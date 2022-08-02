@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JGQ-d5-jOy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8qe-3i-dHA">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="SgW-mc-UYk">
+                            <searchBar contentMode="redraw" placeholder="YYYYMMDD" translatesAutoresizingMaskIntoConstraints="NO" id="SgW-mc-UYk">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Vvw-i0-Lga"/>
@@ -233,6 +234,7 @@
                             <constraint firstItem="tTY-RF-oEF" firstAttribute="centerX" secondItem="dGg-mO-qAK" secondAttribute="centerX" id="xG6-ER-qQA"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="" image="deskclock" catalog="system" id="iBb-yY-ATq"/>
                     <connections>
                         <outlet property="beerDescriptionLabel" destination="iCh-yw-Xfe" id="FyR-rY-yv4"/>
                         <outlet property="beerImage" destination="9UW-fx-Eat" id="wAi-7y-QJ1"/>
@@ -242,7 +244,74 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rcU-dT-PUv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2570" y="-745"/>
+            <point key="canvasLocation" x="2903" y="871"/>
+        </scene>
+        <!--Beer List View Controller-->
+        <scene sceneID="ksz-Kx-xJa">
+            <objects>
+                <viewController storyboardIdentifier="BeerListViewController" id="lLa-ot-K0O" customClass="BeerListViewController" customModule="SeSac4LectureNetworkBasic" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cJb-Nf-TBv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="itm-MO-qzD">
+                                <rect key="frame" x="0.0" y="144" width="414" height="669"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="628-tt-ETE">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="dXa-KA-lf4">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="HW1-jY-EJC">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ItI-nY-URQ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⭐️ 맥주 리스트 ☘️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFP-re-6Ti">
+                                        <rect key="frame" x="63" y="26" width="288" height="48"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="2k3-EL-2Je"/>
+                                    <constraint firstItem="dFP-re-6Ti" firstAttribute="centerX" secondItem="ItI-nY-URQ" secondAttribute="centerX" id="4wz-Lg-MeD"/>
+                                    <constraint firstItem="dFP-re-6Ti" firstAttribute="centerY" secondItem="ItI-nY-URQ" secondAttribute="centerY" id="ucD-FH-LD8"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="wyH-MR-9W7"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wyH-MR-9W7" firstAttribute="trailing" secondItem="itm-MO-qzD" secondAttribute="trailing" id="3hj-fQ-cun"/>
+                            <constraint firstItem="wyH-MR-9W7" firstAttribute="trailing" secondItem="ItI-nY-URQ" secondAttribute="trailing" id="4P5-dS-T8k"/>
+                            <constraint firstItem="itm-MO-qzD" firstAttribute="top" secondItem="ItI-nY-URQ" secondAttribute="bottom" id="Hzf-Kp-jYd"/>
+                            <constraint firstItem="ItI-nY-URQ" firstAttribute="leading" secondItem="wyH-MR-9W7" secondAttribute="leading" id="ZaO-es-DCr"/>
+                            <constraint firstItem="wyH-MR-9W7" firstAttribute="bottom" secondItem="itm-MO-qzD" secondAttribute="bottom" id="aDt-LT-hgT"/>
+                            <constraint firstItem="ItI-nY-URQ" firstAttribute="top" secondItem="wyH-MR-9W7" secondAttribute="top" id="jvd-Q6-yO5"/>
+                            <constraint firstItem="itm-MO-qzD" firstAttribute="leading" secondItem="wyH-MR-9W7" secondAttribute="leading" id="pYR-RA-rJ8"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="list.bullet" catalog="system" id="Pv2-au-hrX"/>
+                    <connections>
+                        <outlet property="beerCollectionView" destination="itm-MO-qzD" id="JUJ-PE-4oO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KOj-AY-fL4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2903" y="1623"/>
         </scene>
         <!--Translate View Controller-->
         <scene sceneID="pvl-bw-yEM">
@@ -422,12 +491,33 @@
             </objects>
             <point key="canvasLocation" x="3880" y="69"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="tIZ-eW-GGF">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="8qe-3i-dHA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0EB-L9-WIn">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="DWo-NO-aX4" kind="relationship" relationship="viewControllers" id="X6A-ar-z2X"/>
+                        <segue destination="lLa-ot-K0O" kind="relationship" relationship="viewControllers" id="pFO-cI-g4q"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5bG-YU-9ib" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1919" y="1031"/>
+        </scene>
     </scenes>
     <resources>
         <image name="07.circle" catalog="system" width="128" height="121"/>
         <image name="arrow.backward" catalog="system" width="128" height="98"/>
         <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
         <image name="arrow.forward" catalog="system" width="128" height="98"/>
+        <image name="deskclock" catalog="system" width="128" height="124"/>
+        <image name="list.bullet" catalog="system" width="128" height="88"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="network" catalog="system" width="128" height="121"/>
         <image name="text.viewfinder" catalog="system" width="128" height="115"/>
