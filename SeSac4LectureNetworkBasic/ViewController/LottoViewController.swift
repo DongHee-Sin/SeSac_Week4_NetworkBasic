@@ -52,6 +52,7 @@ class LottoViewController: UIViewController {
         let latestRound = calcLatestRound()
         numberList = Array(1...latestRound).reversed()
         requestLotto(number: latestRound)
+        numberTextField.text = "\(latestRound)회차"
     }
     
     

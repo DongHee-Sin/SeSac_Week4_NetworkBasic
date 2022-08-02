@@ -47,7 +47,7 @@ class SearchViewController: UIViewController {
         
         configureView()
         
-        requestBoxOffice(date: "20220801")
+        requestBoxOffice(date: calcYesterday())
     }
 
     
@@ -68,8 +68,9 @@ class SearchViewController: UIViewController {
                     let movieNm = movie["movieNm"].stringValue
                     let openDt = movie["openDt"].stringValue
                     let audiAcc = movie["audiAcc"].stringValue
+                    let rank = movie["rank"].stringValue
                     
-                    let data = BoxOfficeModel(movieTitle: movieNm, releaseDate: openDt, totalCount: audiAcc)
+                    let data = BoxOfficeModel(movieTitle: movieNm, releaseDate: openDt, totalCount: Int(audiAcc) ?? 0, rank: rank)
                     
                     list.append(data)
                 }
@@ -80,6 +81,16 @@ class SearchViewController: UIViewController {
                 print(error)
             }
         }
+    }
+    
+    
+    func calcYesterday() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyyMMdd"
+        
+        let yesterday = Date() - 86400
+        
+        return dateFormatter.string(from: yesterday)
     }
 }
 
@@ -108,10 +119,8 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
 
-        cell.titleLabel.font = .boldSystemFont(ofSize: 22)
-        cell.titleLabel.text = "\(list[indexPath.row].movieTitle): \(list[indexPath.row].releaseDate)"
-        cell.selectionStyle = .none
-
+        cell.configureCell(data: list[indexPath.row])
+        
         return cell
     }
 
