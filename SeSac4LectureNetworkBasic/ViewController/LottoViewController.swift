@@ -64,7 +64,7 @@ class LottoViewController: UIViewController {
     
     
     func requestLotto(number: Int) {
-        let url = "https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo=\(number)"
+        let url = "\(EndPoint.lottoURL)drwNo=\(number)"
         
         // AF : 200~299 status code == success (기본값)
         // statusCode 매개변수를 활용하여 성공 코드의 범위를 변경할 수 있음

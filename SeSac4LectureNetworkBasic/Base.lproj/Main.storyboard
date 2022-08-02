@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DWo-NO-aX4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JGQ-d5-jOy">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -42,6 +42,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="magnifyingglass" catalog="system" id="aBC-xO-oO1"/>
                     <connections>
+                        <outlet property="searchBar" destination="SgW-mc-UYk" id="ICU-UR-x4I"/>
                         <outlet property="searchTableView" destination="K1n-eA-Ntm" id="kXG-bf-s2J"/>
                     </connections>
                 </viewController>
@@ -261,26 +262,42 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sTa-jd-zOt">
-                                <rect key="frame" x="87" y="597" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sTa-jd-zOt">
+                                <rect key="frame" x="20" y="385" width="374" height="200"/>
                                 <color key="backgroundColor" systemColor="systemBrownColor"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="UjI-nC-Wdm"/>
+                                </constraints>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I6k-ch-a4g">
+                                <rect key="frame" x="100" y="324" width="214" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="번역하기"/>
+                                <connections>
+                                    <action selector="translateButtonTapped:" destination="Jy6-KK-iMc" eventType="touchUpInside" id="UXe-XP-6Cs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DAx-gG-qxH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="I6k-ch-a4g" firstAttribute="top" secondItem="5wQ-mD-62k" secondAttribute="bottom" constant="30" id="0hF-Wm-jHM"/>
                             <constraint firstItem="DAx-gG-qxH" firstAttribute="trailing" secondItem="5wQ-mD-62k" secondAttribute="trailing" constant="20" id="Cmb-6S-0cN"/>
                             <constraint firstItem="5wQ-mD-62k" firstAttribute="top" secondItem="DAx-gG-qxH" secondAttribute="top" constant="50" id="DM5-j0-HAQ"/>
+                            <constraint firstItem="sTa-jd-zOt" firstAttribute="leading" secondItem="DAx-gG-qxH" secondAttribute="leading" constant="20" id="QEm-mn-zyB"/>
+                            <constraint firstItem="DAx-gG-qxH" firstAttribute="trailing" secondItem="I6k-ch-a4g" secondAttribute="trailing" constant="100" id="dGK-oz-LWD"/>
+                            <constraint firstItem="DAx-gG-qxH" firstAttribute="trailing" secondItem="sTa-jd-zOt" secondAttribute="trailing" constant="20" id="fJF-iR-jDD"/>
+                            <constraint firstItem="sTa-jd-zOt" firstAttribute="top" secondItem="I6k-ch-a4g" secondAttribute="bottom" constant="30" id="p28-Vr-yty"/>
+                            <constraint firstItem="I6k-ch-a4g" firstAttribute="leading" secondItem="DAx-gG-qxH" secondAttribute="leading" constant="100" id="qZq-XF-Vsx"/>
                             <constraint firstItem="5wQ-mD-62k" firstAttribute="leading" secondItem="DAx-gG-qxH" secondAttribute="leading" constant="20" id="sg6-rV-cDn"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="text.viewfinder" catalog="system" id="Bzw-Ph-Pxb"/>
                     <connections>
+                        <outlet property="resultTextView" destination="sTa-jd-zOt" id="A3f-cJ-edM"/>
                         <outlet property="userInputTextView" destination="5wQ-mD-62k" id="KJc-w5-pfz"/>
                     </connections>
                 </viewController>

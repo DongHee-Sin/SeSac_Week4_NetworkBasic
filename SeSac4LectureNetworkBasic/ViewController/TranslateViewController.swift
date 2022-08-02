@@ -7,6 +7,9 @@
 
 import UIKit
 
+import Alamofire
+import SwiftyJSON
+
 /*
  UIButton, UITextFiedl > Action
  UITextView, UISearchBar > Action (X)
@@ -21,7 +24,10 @@ class TranslateViewController: UIViewController {
 
     // MARK: - Outlet
     @IBOutlet weak var userInputTextView: UITextView!
+    @IBOutlet weak var resultTextView: UITextView!
     
+    
+    // Propertys
     let textViewPlaceholderText = "번역하고싶은 문장을 작성해보세요."
     
     
@@ -38,10 +44,51 @@ class TranslateViewController: UIViewController {
         
 //        userInputTextView.resignFirstResponder()
 //        userInputTextView.becomeFirstResponder()
+        
+        requestTranslatedData(text: "안녕하세요. 저는 고래밥을 좋아합니다.")
+    }
+    
+    
+    func requestTranslatedData(text: String) {
+        let url = EndPoint.translateURL
+        
+        // HTTP Body : 실질적인 데이터
+        let parameter = ["source": "ko", "target": "en", "text": text]
+        
+        // HTTP Header => Key: Value 형식
+        let header: HTTPHeaders = ["X-Naver-Client-Id": APIKey.NAVER_ID, "X-Naver-Client-Secret": APIKey.NAVER_SECRET]
+        
+        AF.request(url, method: .post, parameters: parameter, headers: header).validate(statusCode: 200...500).responseJSON { [unowned self] response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                
+                // 상태코드별로 분기처리하는게 좋다.
+                let statusCode = response.response?.statusCode ?? 500
+                
+                if statusCode == 200 {
+                    let result = json["message"]["result"]["translatedText"].stringValue
+                    resultTextView.text = result
+                }else {
+                    resultTextView.text = json["errorMessage"].stringValue
+                }
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    
+    @IBAction func translateButtonTapped(_ sender: UIButton) {
+        requestTranslatedData(text: userInputTextView.text)
     }
 }
 
 
+
+
+// MARK: - TextView Protocol
 extension TranslateViewController: UITextViewDelegate {
     
     // 텍스트뷰의 텍스트가 변할 때마다 호출

@@ -29,6 +29,7 @@
 		D0D254912892236A00AB0CC5 /* LottoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D254902892236A00AB0CC5 /* LottoViewController.swift */; };
 		D0D254932892304F00AB0CC5 /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D254922892304F00AB0CC5 /* TranslateViewController.swift */; };
 		D0D2549528923A9F00AB0CC5 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D2549428923A9F00AB0CC5 /* WebViewController.swift */; };
+		D0F41D7A2898BD2400277673 /* BoxOfficeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F41D792898BD2400277673 /* BoxOfficeModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		D0D254902892236A00AB0CC5 /* LottoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoViewController.swift; sourceTree = "<group>"; };
 		D0D254922892304F00AB0CC5 /* TranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewController.swift; sourceTree = "<group>"; };
 		D0D2549428923A9F00AB0CC5 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		D0F41D792898BD2400277673 /* BoxOfficeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 				D04BD12728935D3800886AD3 /* ViewController */,
 				D0D2548F289221E700AB0CC5 /* ListTableViewCell */,
 				D0D2548D2892119F00AB0CC5 /* ViewController.swift */,
+				D0F41D782898BD1B00277673 /* Model */,
 				D002A9672897BA0500E53834 /* CustomClass */,
 				D0BDFD0C2890DD99002DEA45 /* Assets.xcassets */,
 				D0BDFD0E2890DD99002DEA45 /* LaunchScreen.storyboard */,
@@ -167,6 +170,14 @@
 				D0BDFD1A2890E4CE002DEA45 /* ListTableViewCell.xib */,
 			);
 			path = ListTableViewCell;
+			sourceTree = "<group>";
+		};
+		D0F41D782898BD1B00277673 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D0F41D792898BD2400277673 /* BoxOfficeModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,6 +266,7 @@
 				D0D2549528923A9F00AB0CC5 /* WebViewController.swift in Sources */,
 				D002A9692897CA8900E53834 /* BeerAPIViewController.swift in Sources */,
 				D08098C1289262E800AAE88D /* CustomTabBarController.swift in Sources */,
+				D0F41D7A2898BD2400277673 /* BoxOfficeModel.swift in Sources */,
 				D0BDFD182890E1F8002DEA45 /* SearchViewController.swift in Sources */,
 				D0BDFD1B2890E4CE002DEA45 /* ListTableViewCell.swift in Sources */,
 				D0399C662897527C00D5FDD0 /* ReusableViewProtocol.swift in Sources */,

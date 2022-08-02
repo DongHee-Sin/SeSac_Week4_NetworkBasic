@@ -24,8 +24,9 @@ import UIKit
     // 무조건 var(변수)로 선언해야 함 (사용하는 부분에서 let으로 구현하기 가능)
     // get, set 명시는 최소한의 요구사항임
     // get으로 명시했다면, get 기능만 최소한 구현되어 있으면 됨. (필요하면 set을 구현해도 괜찮음)
-    var navigationTitleString: String { get set }
-    var backgroundColor: UIColor { get }
+    
+    //var navigationTitleString: String { get set }
+    //var backgroundColor: UIColor { get }
     
     func configureView()
     
