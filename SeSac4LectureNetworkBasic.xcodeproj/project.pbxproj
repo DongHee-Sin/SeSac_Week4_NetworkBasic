@@ -16,6 +16,7 @@
 		D0399C7128977D0300D5FDD0 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = D0399C7028977D0300D5FDD0 /* SwiftyJSON */; };
 		D04BD12928935D4B00886AD3 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04BD12828935D4B00886AD3 /* LocationViewController.swift */; };
 		D04BD12C289384E800886AD3 /* HBIOS-SYS.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D04BD12B289384E800886AD3 /* HBIOS-SYS.ttf */; };
+		D064A48D289A0943000FC6A9 /* ImageSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064A48C289A0943000FC6A9 /* ImageSearchViewController.swift */; };
 		D08098C1289262E800AAE88D /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08098C0289262E800AAE88D /* CustomTabBarController.swift */; };
 		D0BDFD042890DD98002DEA45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BDFD032890DD98002DEA45 /* AppDelegate.swift */; };
 		D0BDFD062890DD98002DEA45 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BDFD052890DD98002DEA45 /* SceneDelegate.swift */; };
@@ -30,6 +31,8 @@
 		D0D254912892236A00AB0CC5 /* LottoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D254902892236A00AB0CC5 /* LottoViewController.swift */; };
 		D0D254932892304F00AB0CC5 /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D254922892304F00AB0CC5 /* TranslateViewController.swift */; };
 		D0D2549528923A9F00AB0CC5 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D2549428923A9F00AB0CC5 /* WebViewController.swift */; };
+		D0E10D84289A4A4A004BAA0C /* ImageSearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E10D82289A4A4A004BAA0C /* ImageSearchCollectionViewCell.swift */; };
+		D0E10D85289A4A4A004BAA0C /* ImageSearchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0E10D83289A4A4A004BAA0C /* ImageSearchCollectionViewCell.xib */; };
 		D0EAB2CE2899331200207C7F /* BeerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EAB2CC2899331200207C7F /* BeerCollectionViewCell.swift */; };
 		D0EAB2CF2899331200207C7F /* BeerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0EAB2CD2899331200207C7F /* BeerCollectionViewCell.xib */; };
 		D0EAB2D12899381700207C7F /* BeerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EAB2D02899381700207C7F /* BeerModel.swift */; };
@@ -44,6 +47,7 @@
 		D0399C6A28975FAB00D5FDD0 /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		D04BD12828935D4B00886AD3 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		D04BD12B289384E800886AD3 /* HBIOS-SYS.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HBIOS-SYS.ttf"; sourceTree = "<group>"; };
+		D064A48C289A0943000FC6A9 /* ImageSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchViewController.swift; sourceTree = "<group>"; };
 		D08098C0289262E800AAE88D /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		D0BDFD002890DD98002DEA45 /* SeSac4LectureNetworkBasic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSac4LectureNetworkBasic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0BDFD032890DD98002DEA45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +64,8 @@
 		D0D254902892236A00AB0CC5 /* LottoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoViewController.swift; sourceTree = "<group>"; };
 		D0D254922892304F00AB0CC5 /* TranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewController.swift; sourceTree = "<group>"; };
 		D0D2549428923A9F00AB0CC5 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		D0E10D82289A4A4A004BAA0C /* ImageSearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		D0E10D83289A4A4A004BAA0C /* ImageSearchCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageSearchCollectionViewCell.xib; sourceTree = "<group>"; };
 		D0EAB2CC2899331200207C7F /* BeerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerCollectionViewCell.swift; sourceTree = "<group>"; };
 		D0EAB2CD2899331200207C7F /* BeerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BeerCollectionViewCell.xib; sourceTree = "<group>"; };
 		D0EAB2D02899381700207C7F /* BeerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerModel.swift; sourceTree = "<group>"; };
@@ -96,6 +102,7 @@
 				D0D254922892304F00AB0CC5 /* TranslateViewController.swift */,
 				D0D2549428923A9F00AB0CC5 /* WebViewController.swift */,
 				D04BD12828935D4B00886AD3 /* LocationViewController.swift */,
+				D064A48C289A0943000FC6A9 /* ImageSearchViewController.swift */,
 			);
 			path = MainTabBar;
 			sourceTree = "<group>";
@@ -197,6 +204,15 @@
 			path = ListTableViewCell;
 			sourceTree = "<group>";
 		};
+		D0E10D81289A4A28004BAA0C /* ImageSearchCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				D0E10D82289A4A4A004BAA0C /* ImageSearchCollectionViewCell.swift */,
+				D0E10D83289A4A4A004BAA0C /* ImageSearchCollectionViewCell.xib */,
+			);
+			path = ImageSearchCollectionViewCell;
+			sourceTree = "<group>";
+		};
 		D0EAB2CA289932C700207C7F /* BeerCollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +225,7 @@
 		D0EAB2CB289932D200207C7F /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				D0E10D81289A4A28004BAA0C /* ImageSearchCollectionViewCell */,
 				D0D2548F289221E700AB0CC5 /* ListTableViewCell */,
 				D0EAB2CA289932C700207C7F /* BeerCollectionViewCell */,
 			);
@@ -295,6 +312,7 @@
 				D0BDFD1C2890E4CE002DEA45 /* ListTableViewCell.xib in Resources */,
 				D0BDFD0D2890DD99002DEA45 /* Assets.xcassets in Resources */,
 				D0EAB2CF2899331200207C7F /* BeerCollectionViewCell.xib in Resources */,
+				D0E10D85289A4A4A004BAA0C /* ImageSearchCollectionViewCell.xib in Resources */,
 				D0BDFD0B2890DD98002DEA45 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,6 +330,7 @@
 				D0D2549528923A9F00AB0CC5 /* WebViewController.swift in Sources */,
 				D002A9692897CA8900E53834 /* BeerAPIViewController.swift in Sources */,
 				D08098C1289262E800AAE88D /* CustomTabBarController.swift in Sources */,
+				D064A48D289A0943000FC6A9 /* ImageSearchViewController.swift in Sources */,
 				D0F41D7A2898BD2400277673 /* BoxOfficeModel.swift in Sources */,
 				D0BDFD182890E1F8002DEA45 /* SearchViewController.swift in Sources */,
 				D0BDFD1B2890E4CE002DEA45 /* ListTableViewCell.swift in Sources */,
@@ -324,6 +343,7 @@
 				D0D254932892304F00AB0CC5 /* TranslateViewController.swift in Sources */,
 				D0D2548B28920CD400AB0CC5 /* ViewPresentbleProtocol.swift in Sources */,
 				D0BDFD062890DD98002DEA45 /* SceneDelegate.swift in Sources */,
+				D0E10D84289A4A4A004BAA0C /* ImageSearchCollectionViewCell.swift in Sources */,
 				D0EAB2D12899381700207C7F /* BeerModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

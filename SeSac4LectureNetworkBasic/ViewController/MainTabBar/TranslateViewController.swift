@@ -53,7 +53,7 @@ class TranslateViewController: UIViewController {
         let url = EndPoint.translateURL
         
         // HTTP Body : 실질적인 데이터
-        let parameter = ["source": "ko", "target": "en", "text": text]
+        let parameter: Parameters = ["source": "ko", "target": "en", "text": text]
         
         // HTTP Header => Key: Value 형식
         let header: HTTPHeaders = ["X-Naver-Client-Id": APIKey.NAVER_ID, "X-Naver-Client-Secret": APIKey.NAVER_SECRET]
