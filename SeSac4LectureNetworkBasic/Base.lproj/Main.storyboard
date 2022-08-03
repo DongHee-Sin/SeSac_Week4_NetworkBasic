@@ -492,7 +492,7 @@
             </objects>
             <point key="canvasLocation" x="3880" y="69"/>
         </scene>
-        <!--Image Search View Controller-->
+        <!--SearchImage-->
         <scene sceneID="MOe-i4-H8x">
             <objects>
                 <viewController storyboardIdentifier="ImageSearchViewController" id="EVf-Z4-wzC" customClass="ImageSearchViewController" customModule="SeSac4LectureNetworkBasic" customModuleProvider="target" sceneMemberID="viewController">
@@ -500,9 +500,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fPR-mW-irG">
-                                <rect key="frame" x="122" y="356" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fPR-mW-irG">
+                                <rect key="frame" x="0.0" y="94" width="414" height="719"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rEi-sL-6yQ">
                                     <size key="itemSize" width="128" height="128"/>
@@ -512,7 +511,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="hYT-i9-cKd">
-                                        <rect key="frame" x="56" y="0.0" width="128" height="128"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="o6g-nF-v47">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
@@ -521,11 +520,31 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="pPX-0j-Oul">
+                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="1eT-BD-BcU"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="W3h-qc-neu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pPX-0j-Oul" firstAttribute="trailing" secondItem="W3h-qc-neu" secondAttribute="trailing" id="1AX-O0-Y7O"/>
+                            <constraint firstItem="W3h-qc-neu" firstAttribute="bottom" secondItem="fPR-mW-irG" secondAttribute="bottom" id="9IO-AR-3Ms"/>
+                            <constraint firstItem="pPX-0j-Oul" firstAttribute="top" secondItem="W3h-qc-neu" secondAttribute="top" id="AO9-11-cXK"/>
+                            <constraint firstItem="fPR-mW-irG" firstAttribute="top" secondItem="pPX-0j-Oul" secondAttribute="bottom" id="JHh-KF-RJL"/>
+                            <constraint firstItem="fPR-mW-irG" firstAttribute="leading" secondItem="W3h-qc-neu" secondAttribute="leading" id="Qcg-h7-S5n"/>
+                            <constraint firstItem="pPX-0j-Oul" firstAttribute="leading" secondItem="W3h-qc-neu" secondAttribute="leading" id="e7C-mW-HF1"/>
+                            <constraint firstItem="W3h-qc-neu" firstAttribute="trailing" secondItem="fPR-mW-irG" secondAttribute="trailing" id="oZm-pd-cdO"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="doc.on.doc.fill" catalog="system" id="MUM-gw-4O1"/>
+                    <tabBarItem key="tabBarItem" title="SearchImage" image="doc.on.doc.fill" catalog="system" id="MUM-gw-4O1"/>
+                    <connections>
+                        <outlet property="imageCollectionView" destination="fPR-mW-irG" id="Xvc-iL-cwR"/>
+                        <outlet property="searchBar" destination="pPX-0j-Oul" id="DhP-Y0-CsD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3cm-Io-1p2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

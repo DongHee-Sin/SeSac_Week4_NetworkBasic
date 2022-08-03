@@ -10,14 +10,29 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageSearchCollectionViewCell" id="gTV-IL-0wX" customClass="ImageSearchCollectionViewCell" customModule="SeSac4LectureNetworkBasic" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <rect key="frame" x="0.0" y="0.0" width="254" height="258"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <rect key="frame" x="0.0" y="0.0" width="254" height="258"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kx4-vl-xQZ">
+                        <rect key="frame" x="8" y="8" width="238" height="242"/>
+                    </imageView>
+                </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <point key="canvasLocation" x="139" y="111"/>
+            <constraints>
+                <constraint firstItem="kx4-vl-xQZ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="1K5-Su-YgM"/>
+                <constraint firstAttribute="bottom" secondItem="kx4-vl-xQZ" secondAttribute="bottom" constant="8" id="4Zz-9A-Lsx"/>
+                <constraint firstAttribute="trailing" secondItem="kx4-vl-xQZ" secondAttribute="trailing" constant="8" id="9PE-Au-Zl1"/>
+                <constraint firstItem="kx4-vl-xQZ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="TQT-MK-9QE"/>
+            </constraints>
+            <size key="customSize" width="254" height="258"/>
+            <connections>
+                <outlet property="imageView" destination="kx4-vl-xQZ" id="Go1-MA-Wpn"/>
+            </connections>
+            <point key="canvasLocation" x="285.50724637681162" y="180.13392857142856"/>
         </collectionViewCell>
     </objects>
 </document>
