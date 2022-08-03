@@ -15,6 +15,10 @@ class ImageSearchViewController: UIViewController {
     // MARK: - Propertys
     var searchResult: [String] = []
     
+    var fetchingMore: Bool = false
+    
+    var currentSearchText = ""
+    
     
     
     // MARK: - Outlet
@@ -41,11 +45,11 @@ class ImageSearchViewController: UIViewController {
     // MARK: - Methods
     
     // fetch___, request___, call___, get___ > response에 따라 네이밍을 설정하기도 함
-    func requestImage(text: String) {        
+    func requestImage(text: String) {
         // 인코딩
         let text = text.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
         
-        let url = EndPoint.imageSearchURL + "query=\(text)&display=30&start=\(searchResult.count + 1)"
+        let url = EndPoint.imageSearchURL + "query=\(text)&display=10&start=\(searchResult.count + 1)"
         
         // HTTP Header => Key: Value 형식
         let header: HTTPHeaders = ["X-Naver-Client-Id": APIKey.NAVER_ID, "X-Naver-Client-Secret": APIKey.NAVER_SECRET]
@@ -54,13 +58,19 @@ class ImageSearchViewController: UIViewController {
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
-                print("JSON: \(json)")
                 
-                json["items"].arrayValue.forEach {
-                    searchResult.append($0["link"].stringValue)
+                let statusCode = response.response?.statusCode ?? 500
+                
+                if 200..<300 ~= statusCode {
+                    json["items"].arrayValue.forEach {
+                        searchResult.append($0["link"].stringValue)
+                    }
+                    
+                    imageCollectionView.reloadData()
+                    fetchingMore = false
+                }else {
+                    print("STATUSCODE : \(statusCode)")
                 }
-                
-                imageCollectionView.reloadData()
                 
             case .failure(let error):
                 print(error)
@@ -119,7 +129,24 @@ extension ImageSearchViewController: UISearchBarDelegate {
         searchResult.removeAll()
         
         if let text = searchBar.text {
-            requestImage(text: text)
+            currentSearchText = text
+            requestImage(text: currentSearchText)
+        }
+    }
+}
+
+
+
+// MARK: - 페이징
+extension ImageSearchViewController {
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if self.imageCollectionView.contentOffset.y > (imageCollectionView.contentSize.height - imageCollectionView.bounds.size.height) {
+            
+            if !fetchingMore {
+                fetchingMore = true
+                requestImage(text: currentSearchText)
+            }
         }
     }
 }
