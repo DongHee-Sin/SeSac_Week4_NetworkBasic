@@ -29,4 +29,9 @@ class ImageSearchCollectionViewCell: UICollectionViewCell {
             }
         }
     }
+    
+    
+    deinit {
+        print("=============>> DEINIT")
+    }
 }

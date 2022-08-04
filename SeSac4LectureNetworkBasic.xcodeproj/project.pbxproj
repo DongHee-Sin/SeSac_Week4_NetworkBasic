@@ -17,6 +17,7 @@
 		D04BD12928935D4B00886AD3 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04BD12828935D4B00886AD3 /* LocationViewController.swift */; };
 		D04BD12C289384E800886AD3 /* HBIOS-SYS.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D04BD12B289384E800886AD3 /* HBIOS-SYS.ttf */; };
 		D064A48D289A0943000FC6A9 /* ImageSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064A48C289A0943000FC6A9 /* ImageSearchViewController.swift */; };
+		D07AEBDC289B506B00535701 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = D07AEBDB289B506B00535701 /* JGProgressHUD */; };
 		D08098C1289262E800AAE88D /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08098C0289262E800AAE88D /* CustomTabBarController.swift */; };
 		D0BDFD042890DD98002DEA45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BDFD032890DD98002DEA45 /* AppDelegate.swift */; };
 		D0BDFD062890DD98002DEA45 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BDFD052890DD98002DEA45 /* SceneDelegate.swift */; };
@@ -78,6 +79,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0399C7128977D0300D5FDD0 /* SwiftyJSON in Frameworks */,
+				D07AEBDC289B506B00535701 /* JGProgressHUD in Frameworks */,
 				D0399C6E28977CEA00D5FDD0 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,6 +262,7 @@
 			packageProductDependencies = (
 				D0399C6D28977CEA00D5FDD0 /* Alamofire */,
 				D0399C7028977D0300D5FDD0 /* SwiftyJSON */,
+				D07AEBDB289B506B00535701 /* JGProgressHUD */,
 			);
 			productName = SeSac4LectureNetworkBasic;
 			productReference = D0BDFD002890DD98002DEA45 /* SeSac4LectureNetworkBasic.app */;
@@ -292,6 +295,7 @@
 			packageReferences = (
 				D0399C6C28977CEA00D5FDD0 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				D0399C6F28977D0300D5FDD0 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				D07AEBDA289B506B00535701 /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
 			);
 			productRefGroup = D0BDFD012890DD98002DEA45 /* Products */;
 			projectDirPath = "";
@@ -582,6 +586,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		D07AEBDA289B506B00535701 /* XCRemoteSwiftPackageReference "JGProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -594,6 +606,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D0399C6F28977D0300D5FDD0 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
+		};
+		D07AEBDB289B506B00535701 /* JGProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D07AEBDA289B506B00535701 /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
+			productName = JGProgressHUD;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
