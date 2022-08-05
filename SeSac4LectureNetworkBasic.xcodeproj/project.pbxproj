@@ -16,6 +16,7 @@
 		D0399C7128977D0300D5FDD0 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = D0399C7028977D0300D5FDD0 /* SwiftyJSON */; };
 		D04BD12928935D4B00886AD3 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04BD12828935D4B00886AD3 /* LocationViewController.swift */; };
 		D04BD12C289384E800886AD3 /* HBIOS-SYS.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D04BD12B289384E800886AD3 /* HBIOS-SYS.ttf */; };
+		D050130C289D5C41002607F0 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D050130B289D5C41002607F0 /* UserDefaultsManager.swift */; };
 		D064A48D289A0943000FC6A9 /* ImageSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064A48C289A0943000FC6A9 /* ImageSearchViewController.swift */; };
 		D07AEBDC289B506B00535701 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = D07AEBDB289B506B00535701 /* JGProgressHUD */; };
 		D08098C1289262E800AAE88D /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08098C0289262E800AAE88D /* CustomTabBarController.swift */; };
@@ -49,6 +50,7 @@
 		D0399C6A28975FAB00D5FDD0 /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		D04BD12828935D4B00886AD3 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		D04BD12B289384E800886AD3 /* HBIOS-SYS.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HBIOS-SYS.ttf"; sourceTree = "<group>"; };
+		D050130B289D5C41002607F0 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		D064A48C289A0943000FC6A9 /* ImageSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchViewController.swift; sourceTree = "<group>"; };
 		D08098C0289262E800AAE88D /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		D0BDFD002890DD98002DEA45 /* SeSac4LectureNetworkBasic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSac4LectureNetworkBasic.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -173,7 +175,7 @@
 				D0EAB2CB289932D200207C7F /* Cell */,
 				D0D2548D2892119F00AB0CC5 /* ViewController.swift */,
 				D0F41D782898BD1B00277673 /* Model */,
-				D0F125BB289CB3E400FB0A51 /* APIManager */,
+				D0F125BB289CB3E400FB0A51 /* Manager */,
 				D002A9672897BA0500E53834 /* CustomClass */,
 				D0BDFD0C2890DD99002DEA45 /* Assets.xcassets */,
 				D0BDFD0E2890DD99002DEA45 /* LaunchScreen.storyboard */,
@@ -237,12 +239,13 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		D0F125BB289CB3E400FB0A51 /* APIManager */ = {
+		D0F125BB289CB3E400FB0A51 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
 				D0F125BC289CB3FB00FB0A51 /* ImageSearchAPIManager.swift */,
+				D050130B289D5C41002607F0 /* UserDefaultsManager.swift */,
 			);
-			path = APIManager;
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		D0F41D782898BD1B00277673 /* Model */ = {
@@ -346,6 +349,7 @@
 				D002A9692897CA8900E53834 /* BeerAPIViewController.swift in Sources */,
 				D08098C1289262E800AAE88D /* CustomTabBarController.swift in Sources */,
 				D064A48D289A0943000FC6A9 /* ImageSearchViewController.swift in Sources */,
+				D050130C289D5C41002607F0 /* UserDefaultsManager.swift in Sources */,
 				D0F41D7A2898BD2400277673 /* BoxOfficeModel.swift in Sources */,
 				D0BDFD182890E1F8002DEA45 /* SearchViewController.swift in Sources */,
 				D0BDFD1B2890E4CE002DEA45 /* ListTableViewCell.swift in Sources */,

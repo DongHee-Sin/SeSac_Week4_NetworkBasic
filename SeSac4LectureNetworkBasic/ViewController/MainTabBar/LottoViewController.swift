@@ -67,6 +67,17 @@ class LottoViewController: UIViewController {
     
     
     func requestLotto(number: Int) {
+        
+        let labelArray = [drwt1Label, drwt2Label, drwt3Label, drwt4Label, drwt5Label, drwt6Label, bonusLabel]
+        
+        if let savedData = UserDefaultManager.shared.getLottoData(round: number) {
+            for (label, num) in zip(labelArray, savedData) {
+                label?.text = String(num)
+            }
+            
+            return
+        }
+        
         let url = "\(EndPoint.lottoURL)drwNo=\(number)"
         
         // AF : 200~299 status code == success (기본값)
@@ -76,10 +87,12 @@ class LottoViewController: UIViewController {
             case .success(let value):
                 let json = JSON(value)
                 
-                let labelArray = [drwt1Label, drwt2Label, drwt3Label, drwt4Label, drwt5Label, drwt6Label, bonusLabel]
+                let lottoNumber = LottoResultKey.allCases.map { json[$0.rawValue].intValue }
                 
-                for (label, resultKey) in zip(labelArray, LottoResultKey.allCases) {
-                    label?.text = json[resultKey.rawValue].stringValue
+                UserDefaultManager.shared.saveLottoData(round: number, lottoInfo: lottoNumber)
+                
+                for (label, num) in zip(labelArray, lottoNumber) {
+                    label?.text = String(num)
                 }
                 
             case .failure(let error):

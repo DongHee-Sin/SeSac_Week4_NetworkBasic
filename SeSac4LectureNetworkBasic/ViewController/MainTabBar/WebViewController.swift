@@ -32,7 +32,7 @@ class WebViewController: UIViewController {
         
         searchBar.delegate = self
         
-        openWebView (url: destinationURL)
+        openWebView(url: destinationURL)
     }
 
     
