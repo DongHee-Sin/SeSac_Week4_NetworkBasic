@@ -12,6 +12,7 @@ class LocationViewController: UIViewController {
     // Notification 1.
     let notification = UNUserNotificationCenter.current()
     
+    @IBOutlet weak var imageView: UIImageView!
     
     
     // MARK: - View Did Load
@@ -46,6 +47,26 @@ class LocationViewController: UIViewController {
             }
         }
     }
+    
+    
+    @IBAction func downloadImage(_ sender: UIButton) {
+        let url = "https://apod.nasa.gov/apod/image/2208/M13_final2_sinfirma.jpg"
+        
+        print("1", Thread.isMainThread)
+        
+        DispatchQueue.global().async {
+            let data = try! Data(contentsOf: URL(string: url)!)
+            let image = UIImage(data: data)
+            
+            print("2", Thread.isMainThread)
+            
+            DispatchQueue.main.async {
+                self.imageView.image = image
+                print("3", Thread.isMainThread)
+            }
+        }
+    }
+    
     
     
     // Notification 3. 권한 허용한 사용자에게 알림 요청 (언제? 어떤 컨텐츠?)

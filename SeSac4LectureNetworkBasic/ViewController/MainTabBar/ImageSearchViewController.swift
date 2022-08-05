@@ -51,37 +51,12 @@ class ImageSearchViewController: UIViewController {
     
     // fetch___, request___, call___, get___ > response에 따라 네이밍을 설정하기도 함
     func requestImage(text: String) {
-        // 인코딩
-        let text = text.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
-        
-        let url = EndPoint.imageSearchURL + "query=\(text)&display=30&start=\(startPage)"
-        
-        // HTTP Header => Key: Value 형식
-        let header: HTTPHeaders = ["X-Naver-Client-Id": APIKey.NAVER_ID, "X-Naver-Client-Secret": APIKey.NAVER_SECRET]
-        
-        AF.request(url, method: .get, headers: header).validate(statusCode: 200...500).responseJSON { [unowned self] response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                print(json)
-                
-                let statusCode = response.response?.statusCode ?? 500
-                
-                if 200..<300 ~= statusCode {
-                    json["items"].arrayValue.forEach {
-                        searchResult.append($0["link"].stringValue)
-                    }
-                    
-                    totalCount = json["total"].intValue
-                    
-                    imageCollectionView.reloadData()
-                    //fetchingMore = false
-                }else {
-                    print("STATUSCODE : \(statusCode)")
-                }
-                
-            case .failure(let error):
-                print(error)
+        ImageSearchAPIManager.shared.fetchImageData(query: text, startPage: startPage) { [weak self] totalCount, list in
+            self?.searchResult.append(contentsOf: list)
+            self?.totalCount = totalCount
+            
+            DispatchQueue.main.async {
+                self?.imageCollectionView.reloadData()
             }
         }
     }
@@ -185,7 +160,6 @@ extension ImageSearchViewController: UISearchBarDelegate {
             currentSearchText = text
             
             // 스크롤 맨위로 올리는 방법 찾아보기
-            //imageCollectionView.scrollToItem(at: <#T##IndexPath#>, at: <#T##UICollectionView.ScrollPosition#>, animated: <#T##Bool#>)
             
             requestImage(text: currentSearchText)
         }

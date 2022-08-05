@@ -37,6 +37,7 @@
 		D0EAB2CE2899331200207C7F /* BeerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EAB2CC2899331200207C7F /* BeerCollectionViewCell.swift */; };
 		D0EAB2CF2899331200207C7F /* BeerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0EAB2CD2899331200207C7F /* BeerCollectionViewCell.xib */; };
 		D0EAB2D12899381700207C7F /* BeerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EAB2D02899381700207C7F /* BeerModel.swift */; };
+		D0F125BD289CB3FB00FB0A51 /* ImageSearchAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F125BC289CB3FB00FB0A51 /* ImageSearchAPIManager.swift */; };
 		D0F41D7A2898BD2400277673 /* BoxOfficeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F41D792898BD2400277673 /* BoxOfficeModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +71,7 @@
 		D0EAB2CC2899331200207C7F /* BeerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerCollectionViewCell.swift; sourceTree = "<group>"; };
 		D0EAB2CD2899331200207C7F /* BeerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BeerCollectionViewCell.xib; sourceTree = "<group>"; };
 		D0EAB2D02899381700207C7F /* BeerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerModel.swift; sourceTree = "<group>"; };
+		D0F125BC289CB3FB00FB0A51 /* ImageSearchAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchAPIManager.swift; sourceTree = "<group>"; };
 		D0F41D792898BD2400277673 /* BoxOfficeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -171,6 +173,7 @@
 				D0EAB2CB289932D200207C7F /* Cell */,
 				D0D2548D2892119F00AB0CC5 /* ViewController.swift */,
 				D0F41D782898BD1B00277673 /* Model */,
+				D0F125BB289CB3E400FB0A51 /* APIManager */,
 				D002A9672897BA0500E53834 /* CustomClass */,
 				D0BDFD0C2890DD99002DEA45 /* Assets.xcassets */,
 				D0BDFD0E2890DD99002DEA45 /* LaunchScreen.storyboard */,
@@ -232,6 +235,14 @@
 				D0EAB2CA289932C700207C7F /* BeerCollectionViewCell */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		D0F125BB289CB3E400FB0A51 /* APIManager */ = {
+			isa = PBXGroup;
+			children = (
+				D0F125BC289CB3FB00FB0A51 /* ImageSearchAPIManager.swift */,
+			);
+			path = APIManager;
 			sourceTree = "<group>";
 		};
 		D0F41D782898BD1B00277673 /* Model */ = {
@@ -348,6 +359,7 @@
 				D0D2548B28920CD400AB0CC5 /* ViewPresentbleProtocol.swift in Sources */,
 				D0BDFD062890DD98002DEA45 /* SceneDelegate.swift in Sources */,
 				D0E10D84289A4A4A004BAA0C /* ImageSearchCollectionViewCell.swift in Sources */,
+				D0F125BD289CB3FB00FB0A51 /* ImageSearchAPIManager.swift in Sources */,
 				D0EAB2D12899381700207C7F /* BeerModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
