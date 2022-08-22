@@ -13,6 +13,8 @@ class BoxOffice: Object {
     @Persisted var targetDate: String
     @Persisted var movieList: List<Movie>
     
+    @Persisted(primaryKey: true) var object: ObjectId
+    
     convenience init(targetDate: String) {
         self.init()
         self.targetDate = targetDate
