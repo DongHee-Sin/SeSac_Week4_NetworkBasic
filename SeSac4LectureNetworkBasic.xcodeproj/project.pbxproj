@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		D001C3B22899314B0082A4E0 /* BeerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D001C3B12899314B0082A4E0 /* BeerListViewController.swift */; };
 		D002A9692897CA8900E53834 /* BeerAPIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D002A9682897CA8900E53834 /* BeerAPIViewController.swift */; };
+		D01197D528B382EB001E8755 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = D01197D428B382EB001E8755 /* Realm */; };
+		D01197D728B382EB001E8755 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D01197D628B382EB001E8755 /* RealmSwift */; };
 		D0399C662897527C00D5FDD0 /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0399C652897527C00D5FDD0 /* ReusableViewProtocol.swift */; };
 		D0399C692897578F00D5FDD0 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0399C682897578F00D5FDD0 /* Constant.swift */; };
 		D0399C6B28975FAB00D5FDD0 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0399C6A28975FAB00D5FDD0 /* UserDefaultsHelper.swift */; };
@@ -39,7 +41,7 @@
 		D0EAB2CF2899331200207C7F /* BeerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0EAB2CD2899331200207C7F /* BeerCollectionViewCell.xib */; };
 		D0EAB2D12899381700207C7F /* BeerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EAB2D02899381700207C7F /* BeerModel.swift */; };
 		D0F125BD289CB3FB00FB0A51 /* ImageSearchAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F125BC289CB3FB00FB0A51 /* ImageSearchAPIManager.swift */; };
-		D0F41D7A2898BD2400277673 /* BoxOfficeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F41D792898BD2400277673 /* BoxOfficeModel.swift */; };
+		D0F41D7A2898BD2400277673 /* BoxOffice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F41D792898BD2400277673 /* BoxOffice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,7 +76,7 @@
 		D0EAB2CD2899331200207C7F /* BeerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BeerCollectionViewCell.xib; sourceTree = "<group>"; };
 		D0EAB2D02899381700207C7F /* BeerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerModel.swift; sourceTree = "<group>"; };
 		D0F125BC289CB3FB00FB0A51 /* ImageSearchAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchAPIManager.swift; sourceTree = "<group>"; };
-		D0F41D792898BD2400277673 /* BoxOfficeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeModel.swift; sourceTree = "<group>"; };
+		D0F41D792898BD2400277673 /* BoxOffice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOffice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,8 @@
 			files = (
 				D0399C7128977D0300D5FDD0 /* SwiftyJSON in Frameworks */,
 				D07AEBDC289B506B00535701 /* JGProgressHUD in Frameworks */,
+				D01197D528B382EB001E8755 /* Realm in Frameworks */,
+				D01197D728B382EB001E8755 /* RealmSwift in Frameworks */,
 				D0399C6E28977CEA00D5FDD0 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -173,13 +177,13 @@
 				D0BDFD092890DD98002DEA45 /* Main.storyboard */,
 				D04BD12728935D3800886AD3 /* ViewController */,
 				D0EAB2CB289932D200207C7F /* Cell */,
-				D0D2548D2892119F00AB0CC5 /* ViewController.swift */,
 				D0F41D782898BD1B00277673 /* Model */,
 				D0F125BB289CB3E400FB0A51 /* Manager */,
 				D002A9672897BA0500E53834 /* CustomClass */,
 				D0BDFD0C2890DD99002DEA45 /* Assets.xcassets */,
 				D0BDFD0E2890DD99002DEA45 /* LaunchScreen.storyboard */,
 				D0BDFD112890DD99002DEA45 /* Info.plist */,
+				D0D2548D2892119F00AB0CC5 /* ViewController.swift */,
 			);
 			path = SeSac4LectureNetworkBasic;
 			sourceTree = "<group>";
@@ -232,8 +236,8 @@
 		D0EAB2CB289932D200207C7F /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				D0E10D81289A4A28004BAA0C /* ImageSearchCollectionViewCell */,
 				D0D2548F289221E700AB0CC5 /* ListTableViewCell */,
+				D0E10D81289A4A28004BAA0C /* ImageSearchCollectionViewCell */,
 				D0EAB2CA289932C700207C7F /* BeerCollectionViewCell */,
 			);
 			path = Cell;
@@ -251,7 +255,7 @@
 		D0F41D782898BD1B00277673 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D0F41D792898BD2400277673 /* BoxOfficeModel.swift */,
+				D0F41D792898BD2400277673 /* BoxOffice.swift */,
 				D0EAB2D02899381700207C7F /* BeerModel.swift */,
 			);
 			path = Model;
@@ -277,6 +281,8 @@
 				D0399C6D28977CEA00D5FDD0 /* Alamofire */,
 				D0399C7028977D0300D5FDD0 /* SwiftyJSON */,
 				D07AEBDB289B506B00535701 /* JGProgressHUD */,
+				D01197D428B382EB001E8755 /* Realm */,
+				D01197D628B382EB001E8755 /* RealmSwift */,
 			);
 			productName = SeSac4LectureNetworkBasic;
 			productReference = D0BDFD002890DD98002DEA45 /* SeSac4LectureNetworkBasic.app */;
@@ -310,6 +316,7 @@
 				D0399C6C28977CEA00D5FDD0 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				D0399C6F28977D0300D5FDD0 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				D07AEBDA289B506B00535701 /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
+				D01197D328B382EB001E8755 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = D0BDFD012890DD98002DEA45 /* Products */;
 			projectDirPath = "";
@@ -350,7 +357,7 @@
 				D08098C1289262E800AAE88D /* CustomTabBarController.swift in Sources */,
 				D064A48D289A0943000FC6A9 /* ImageSearchViewController.swift in Sources */,
 				D050130C289D5C41002607F0 /* UserDefaultsManager.swift in Sources */,
-				D0F41D7A2898BD2400277673 /* BoxOfficeModel.swift in Sources */,
+				D0F41D7A2898BD2400277673 /* BoxOffice.swift in Sources */,
 				D0BDFD182890E1F8002DEA45 /* SearchViewController.swift in Sources */,
 				D0BDFD1B2890E4CE002DEA45 /* ListTableViewCell.swift in Sources */,
 				D0399C662897527C00D5FDD0 /* ReusableViewProtocol.swift in Sources */,
@@ -586,6 +593,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		D01197D328B382EB001E8755 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		D0399C6C28977CEA00D5FDD0 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "http://github.com/Alamofire/Alamofire";
@@ -613,6 +628,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		D01197D428B382EB001E8755 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D01197D328B382EB001E8755 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		D01197D628B382EB001E8755 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D01197D328B382EB001E8755 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
 		D0399C6D28977CEA00D5FDD0 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D0399C6C28977CEA00D5FDD0 /* XCRemoteSwiftPackageReference "Alamofire" */;

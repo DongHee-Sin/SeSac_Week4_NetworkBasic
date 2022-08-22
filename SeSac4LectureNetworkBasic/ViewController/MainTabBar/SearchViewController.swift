@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import JGProgressHUD
+import RealmSwift
 
 /*
  Swift Protocol
@@ -27,7 +28,10 @@ class SearchViewController: UIViewController {
     let hud = JGProgressHUD()
     
     // BoxOffice 배열
-    var list: [BoxOfficeModel] = []
+    var boxOffice: Results<BoxOffice>!
+    var movieList: List<Movie>?
+    
+    let localRealm = try! Realm()
     
     
     
@@ -47,22 +51,40 @@ class SearchViewController: UIViewController {
         searchTableView.dataSource = self
         searchBar.delegate = self
         
-        // 테이블뷰가 사용할 테이블뷰 셀(XIB) 등록
-        // XIB : xml interface builder <= Nib
         searchTableView.register(UINib(nibName: ListTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: ListTableViewCell.reuseIdentifier)
         
         configureView()
         
-        requestBoxOffice(date: calcYesterday())
+        getBoxOfficeInfo(date: calcYesterday())
     }
 
     
     
     // MARK: - Methods
-    func requestBoxOffice(date: String) {
+    func getBoxOfficeInfo(date: String) {
+        
         hud.show(in: view, animated: true)
         
-        list.removeAll()
+        // 검색한 Date에 대한 BoxOffice 정보 가져오기
+        boxOffice = localRealm.objects(BoxOffice.self).where({
+            $0.targetDate == date
+        })
+        
+        if let boxoffice = boxOffice.first {
+            // Realm에 검색한 Date에 대한 BoxOffice 정보가 있는 경우
+            movieList = boxoffice.movieList
+            searchTableView.reloadData()
+            hud.dismiss(animated: true)
+            
+        }else {
+            // Realm에 검색한 Date에 대한 BoxOffice 정보가 없는 경우
+            requestBoxOffice(date: date)
+        }
+    }
+    
+    
+    
+    func requestBoxOffice(date: String) {
         
         let url = "\(EndPoint.boxOfficeURL)key=\(APIKey.BOXOFFICE)&targetDt=\(date)"
         
@@ -71,16 +93,27 @@ class SearchViewController: UIViewController {
             case .success(let value):
                 let json = JSON(value)
                 
+                var result: [Movie] = []
+                
                 for movie in json["boxOfficeResult"]["dailyBoxOfficeList"].arrayValue {
                     let movieNm = movie["movieNm"].stringValue
                     let openDt = movie["openDt"].stringValue
                     let audiAcc = movie["audiAcc"].stringValue
                     let rank = movie["rank"].stringValue
                     
-                    let data = BoxOfficeModel(movieTitle: movieNm, releaseDate: openDt, totalCount: Int(audiAcc) ?? 0, rank: rank)
+                    let data = Movie(movieTitle: movieNm, releaseDate: openDt, totalCount: Int(audiAcc) ?? 0, rank: rank)
                     
-                    list.append(data)
+                    result.append(data)
                 }
+                
+                // Realm에 데이터 추가 (API Response 데이터를 통해)
+                let task = BoxOffice(targetDate: date)
+                task.movieList.append(objectsIn: result)
+                try! localRealm.write {
+                    localRealm.add(task)
+                }
+                
+                movieList = task.movieList
                 
                 searchTableView.reloadData()
                 hud.dismiss(animated: true)
@@ -126,7 +159,7 @@ extension SearchViewController: ViewPresentableProtocol {
 // MARK: - TableView Protocol
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return list.count
+        return movieList?.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -134,7 +167,9 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
 
-        cell.configureCell(data: list[indexPath.row])
+        if let movieList = movieList {
+            cell.updateCell(data: movieList[indexPath.row])
+        }
         
         return cell
     }
@@ -151,7 +186,7 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
         // 옵셔널처리, 글자수, 유효한 형식인지 확인하는 코드 추가 필요
-        requestBoxOffice(date: searchBar.text!)
+        getBoxOfficeInfo(date: searchBar.text!)
     }
     
 }

@@ -17,20 +17,24 @@ class ListTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        configureInitialUI()
     }
     
     
-    func configureCell(data: BoxOfficeModel) {
+    func configureInitialUI() {
+        rankLabel.textAlignment = .center
+        rankLabel.layer.cornerRadius = rankLabel.frame.width / 4
+        rankLabel.clipsToBounds = true
+        self.selectionStyle = .none
+    }
+    
+    
+    func updateCell(data: Movie) {
         rankLabel.text = data.rank
         titleLabel.text = data.movieTitle
         openDateLabel.text = data.releaseDate
         totalCountLabel.text = insertComma(value: data.totalCount)
-        
-        rankLabel.textAlignment = .center
-        rankLabel.layer.cornerRadius = rankLabel.frame.width / 4
-        rankLabel.clipsToBounds = true
-        
-        self.selectionStyle = .none
     }
     
     
